@@ -2,6 +2,11 @@
 
 This repository supports the economic analysis for my final year project, where we are evaluating the feasibility of building a chemical plant. In particular, these notebooks are used to estimate more realistic operating-cost assumptions by analysing market price data, quantifying price uncertainty, and deriving location-specific adjustment factors for utilities.
 
+Since a large number of market research was needed for this project, AI was heavily leveraged to speed up this project
+workflow. ChatGPT's deep research capabilities were used for this function. For reference, all AI generated reports are 
+presented in this repository under "papers/"
+
+
 ### `calculating_variance_in_price.ipynb`
 This notebook analyses historical crude oil price data to estimate price variability over time. It loads crude oil prices from `data/crude_oil_prices.csv`, converts the series into monthly averages, and calculates log returns between periods. From these returns, it computes key statistical measures such as variance, standard deviation, and standard error.
 
