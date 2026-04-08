@@ -1,0 +1,95 @@
+---
+title: "CN4119 Creating CFD Plots"
+author: "Spike Chan"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(MASS)
+library(tidyr)
+library(stringr)
+library(car)
+library(lubridate)
+library(forecast)
+library(olsrr)
+library(leaps)
+library(readxl)
+```
+
+```{r}
+data = read_xlsx("data/Creating CFD plots.xlsx")
+head(data)
+```
+
+
+
+
+LOLLIPOP PLOTS
+```{r}
+data %>% ggplot(aes(x=Year,y=`Cash Flow (discounted)`)) +
+  geom_segment(aes(xend = Year, y=0, 
+                   yend =`Cash Flow (discounted)`),
+               linetype = "dotted") +
+  geom_line(aes(group = 1)) +
+  geom_point(size=3,color = 'green') + theme_minimal()
+
+```
+
+CFD - like plots
+
+
+Cash Flow (non-discounted)
+```{r}
+data %>% ggplot(aes(x=Year,y=`Cumulative Cash Flow (discounted)`)) +
+  geom_segment(aes(xend = Year, y=0, 
+                   yend =`Cumulative Cash Flow (discounted)`),V
+               linetype = "dotted") +
+  geom_line(aes(group = 1)) + theme_minimal()
+
+```
+
+```{r}
+data %>% ggplot(aes(x=Year,y=`Cash Flow (discounted)`)) +
+  geom_segment(aes(xend = Year, y=0, 
+                   yend =`Cash Flow (discounted)`),
+               linetype = "dotted") +
+  geom_line(aes(group = 1)) + theme_minimal() +
+   theme(
+    axis.text.x = element_text(vjust = -0.5)
+  )
+
+```
+```{r}
+data %>% ggplot(aes(x=Year,y=`Cash Flow (discounted)`)) +
+  geom_segment(aes(xend = Year, y=0, 
+                   yend =`Cash Flow (discounted)`),
+               linetype = "dotted") +
+  geom_line(aes(group = 1)) + theme_minimal() +
+   theme(
+    axis.text.x = element_text(vjust = -5)
+  )
+```
+
+# Plotting Cummulative Cash Ratio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
