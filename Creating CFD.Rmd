@@ -77,7 +77,15 @@ data %>% ggplot(aes(x=Year,y=`Cash Flow (discounted)`)) +
   )
 ```
 
-# Plotting Cummulative Cash Ratio
+# Creating Cummulative Cash Ratio and plotting
+Remember to change the CAPEX accordingly
+
+```{r}
+CAPEX = 
+data %>% 
+
+
+```
 
 
 
@@ -86,9 +94,7 @@ data %>% ggplot(aes(x=Year,y=`Cash Flow (discounted)`)) +
 
 
 
-
-
-
+  
 
 
 
